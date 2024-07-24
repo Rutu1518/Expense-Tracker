@@ -1,0 +1,26 @@
+.user-input{
+    display: block;
+    width: 90%;
+    margin: 5px 15px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid #4d4dff;
+}
+.user-input:focus, .user-input:active{
+    outline: none;
+    border: 1px solid #4d4dff;
+}
+.btn-all{
+    background-color: #9999ff;
+    color: white;
+    border-radius: 30px;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+
+}
+.btn-all:hover{
+    transition: 0.3s;
+    background-color: #6666ff;
+}

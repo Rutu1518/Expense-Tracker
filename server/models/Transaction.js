@@ -3,11 +3,13 @@ import { Schema, model } from "mongoose";
 // creadit: money comes in
 // debit: money goes out
 const transactionSchema = new Schema({
-
+    title:{
+      type:String,
+      required:true,
+    },
     amount:{
       type:Number,
       required:true,
-
     },
     category:{
         type:String,
@@ -26,6 +28,7 @@ const transactionSchema = new Schema({
     },{
         timestamps:true,
       });
+      
 const Transaction = model("Transaction", transactionSchema);
 
 export default Transaction;
