@@ -2,6 +2,8 @@ import User from "../models/User.js";
 
 const postSignup = async (req, res) =>{
     const {fullName, Email, Password, DOB} = req.body;
+ 
+    console.log(req.body)
 
     const user = new User ({ 
         fullName,
@@ -33,7 +35,7 @@ const postLogin = async (req, res) =>{
 
     const user = await User.findOne({
         Email:Email,
-        Password:password
+        Password:Password
     });
 
     if(user){
