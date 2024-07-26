@@ -1,11 +1,13 @@
 .user-input{
     display: block;
     width: 90%;
-    margin: 5px 15px;
+    margin: 20px 15px;
     display: block;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    height: 35px;
     border-radius: 5px;
     border: 1px solid #4d4dff;
+    font-size: 20px;
 }
 .user-input:focus, .user-input:active{
     outline: none;
@@ -15,9 +17,12 @@
     background-color: #9999ff;
     color: white;
     border-radius: 30px;
-    padding: 5px 20px;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
+    margin-top: 50px;
+    margin-left: 110px;
+    font-size: 20px;
 
 }
 .btn-all:hover{

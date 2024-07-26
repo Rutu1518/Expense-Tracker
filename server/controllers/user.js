@@ -1,15 +1,13 @@
 import User from "../models/User.js";
 
 const postSignup = async (req, res) =>{
-    const {fullName, Email, Password, DOB} = req.body;
- 
-    console.log(req.body)
+    const {fullName, email, password, dob} = req.body;
 
     const user = new User ({ 
         fullName,
-        Email,
-        Password,
-        DOB: new Date(DOB)
+        email,
+        password,
+        dob: new Date(dob)
     });
 
     try {
@@ -31,11 +29,11 @@ const postSignup = async (req, res) =>{
 }
 
 const postLogin = async (req, res) =>{
-    const {Email, Password} = req.body;
+    const {email, password} = req.body;
 
     const user = await User.findOne({
-        Email:Email,
-        Password:Password
+        email:email,
+        password:password
     });
 
     if(user){

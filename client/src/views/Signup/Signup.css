@@ -1,6 +1,7 @@
 .Signup-form{   
-    width: 300px;
-    border: 1px solid #9999ff;
+    width: 400px;
+    height: 350px;
+    border: 2px solid #9999ff;
     padding: 20px;
     margin: 0 auto;
     display: block;
@@ -9,6 +10,6 @@
 }
 .Signup-heading{
     text-align: center;
-    font-size: 20px;
+    font-size: 35px;
     color: #9999ff
 }

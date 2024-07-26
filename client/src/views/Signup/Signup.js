@@ -26,6 +26,7 @@ function Signup() {
       <h1 className='Signup-heading'>User Registration</h1>
 
       <form className='Signup-form'>
+        
         <input type="text" 
         placeholder='fullName'
         className='user-input'
