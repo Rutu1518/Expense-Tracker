@@ -1,3 +1,18 @@
+.form-heading{
+    text-align: center;
+    font-size: 35px;
+    color: #9999ff
+}
+.user-form{   
+    width: 400px;
+    height: auto;
+    border: 2px solid #9999ff;
+    padding: 20px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    background-color: #ccccff;
+}
 .user-input{
     display: block;
     width: 90%;
@@ -21,11 +36,23 @@
     border: none;
     cursor: pointer;
     margin-top: 50px;
-    margin-left: 110px;
+    margin-left: 130px;
     font-size: 20px;
 
 }
 .btn-all:hover{
     transition: 0.3s;
     background-color: #6666ff;
+}
+.reference-links{
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+}
+.login-btn{
+    margin-left: 110px;
+    width: 150px;
 }

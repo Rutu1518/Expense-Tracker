@@ -2,6 +2,8 @@ import User from "../models/User.js";
 
 const postSignup = async (req, res) =>{
     const {fullName, email, password, dob} = req.body;
+ 
+    console.log(req.body)
 
     const user = new User ({ 
         fullName,
@@ -9,7 +11,6 @@ const postSignup = async (req, res) =>{
         password,
         dob: new Date(dob)
     });
-
     try {
     const savedUser = await user.save();
 

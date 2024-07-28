@@ -1,69 +1,92 @@
 import React, { useState } from 'react'
-import "./Signup.css"
-import axios from 'axios';
+import './Signup.css'
+import axios from 'axios'
+import toast, {Toaster} from 'react-hot-toast'
+import { Link } from 'react-router-dom'
 
 function Signup() {
 
-    const [user , setUser] = useState({
-        fullName: '',
-        Email: '',
-        Password: '',
-        DOB: ''
-    })
-    
-    const signup = async () =>{
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/Signup,{
-            fullName : user.fullName,
-            Email : user.Email,
-            Password : user.Password,
-            DOB : user.DOB
+  const [user, setUser] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    dob: ''
+  })
 
-        }`)
-        console.log(response)
+  const signup = async () => {
+    const response = await axios.post(`${process.env.REACT_APP_API_URL}/signup`, {
+      fullName: user.fullName,
+      email: user.email,
+      password: user.password,
+      dob: user.dob
+    })
+
+    if(response.data.success){
+      toast.success(response.data.message)
+
+      setUser({
+        fullName: '',
+        email: '',
+        password: '',
+        dob: ''
+      })
     }
+    else{
+      toast.error(response.data.message)
+    }
+  }
+
+
   return (
     <div>
-      <h1 className='Signup-heading'>User Registration</h1>
+      <h1 className='form-heading'>User Registration</h1>
 
-      <form className='Signup-form'>
-        
-        <input type="text" 
-        placeholder='fullName'
-        className='user-input'
-        value={user.fullName}
-        onChange={(e)=>setUser({ ...user, fullName: e.target.value })}
-        />
+      <form className='user-form'>
+        <input
+          type="text"
+          placeholder="Fullname"
+          className='user-input'
+          value={user.fullName}
+          onChange={(e) => setUser({ ...user, fullName: e.target.value})}
+          />
 
-        <input type="email" 
-         placeholder='Email' 
-         className='user-input'
-         value={user.Email}
-         onChange={(e)=>setUser({ ...user, Email: e.target.value })}
-         />
+        <input
+          type="email"
+          placeholder="Email"
+          className='user-input'
+          value={user.email}
+          onChange={(e)=>setUser({...user, email: e.target.value})}
+          />
 
-        <input type="password" 
-        placeholder='Password' 
-        className='user-input'
-        value={user.Password}
-        onChange={(e)=>setUser({ ...user, Password: e.target.value })}
-        />
+        <input
+          type="password"
+          placeholder="Password"
+          className='user-input'
+          value={user.password}
+          onChange={(e)=>setUser({...user, password: e.target.value})}
+          />
 
-        <input type="date" 
-        placeholder='Date of Birth' 
-        className='user-input'
-        value={user.DOB}
-        onChange={(e)=>setUser({ ...user, DOB: e.target.value })}
-        />
-        
-        <button type='button' 
-        className='btn-all'
-            onClick={signup}
-            >
-            Register Now
-            </button>
+        <input
+          type="date"
+          placeholder="Date of Birth"
+          className='user-input'
+          value={user.dob}
+          onChange={(e)=>setUser({...user, dob: e.target.value})}
+          />
 
+        <button
+          type='button'
+          className='btn-all'
+          onClick={signup}
+          >
+          Register
+        </button>
+        <Link to='/login' className='reference-links'>Already have an account? Login</Link>
       </form>
 
+      
+
+      <Toaster />
     </div>
   )
 }
